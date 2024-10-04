@@ -21,7 +21,7 @@ export class WeatherHomeComponent implements OnInit, OnDestroy {
   constructor(private service: WeatherService) { }
 
   ngOnInit(): void {
-    //this.getWeatherDatas(this.initialCityName);
+    this.getWeatherDatas(this.initialCityName);
   }
 
   getWeatherDatas(cityName: String): void {
@@ -32,7 +32,6 @@ export class WeatherHomeComponent implements OnInit, OnDestroy {
     ).subscribe({
         next: (response) => {
           response && (this.weatherData = response)
-          console.log(this.weatherData)
         },
         error: (error) => {
           console.log(error)
