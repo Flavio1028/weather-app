@@ -163,6 +163,41 @@ fa-icon {
   text-align: center;
   width: 70%;
 }
+
 .search-icon {
   margin-left: 1em;
+}
+
+@media screen and (max-width: 500px) {
+
+  .search input {
+    width: auto;
+  }
+
+  .container {
+    width: auto;
+    margin-top: 1rem;
+  }
+
+
+  .location {
+    font-size: 0.8em;
+  }
+
+  .temperature {
+    font-size: 2em;
+  }
+
+  .more-info-label {
+    font-size: 0.9em;
+  }
+
+  .more-info-container {
+    display: inline-block;
+  }
+
+  .info-block {
+    width: auto;
+  }
+
 }
