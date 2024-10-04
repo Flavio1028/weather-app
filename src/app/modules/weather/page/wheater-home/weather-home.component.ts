@@ -4,6 +4,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { WeatherDatas } from 'src/app/models/interface/WeatherDatas';
 
 import { WeatherService } from '../../services/weather.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-weather-home',
@@ -18,30 +19,39 @@ export class WeatherHomeComponent implements OnInit, OnDestroy {
   weatherData!: WeatherDatas;
   searchIcon = faMagnifyingGlass;
 
-  constructor(private service: WeatherService) { }
+  constructor(
+    private service: WeatherService,
+    private spinner: NgxSpinnerService
+  ) { }
 
   ngOnInit(): void {
     this.getWeatherDatas(this.initialCityName);
   }
 
   getWeatherDatas(cityName: String): void {
-
+    this.spinner.show();
     this.service.getWeatherDatas(cityName)
-    .pipe(
-      takeUntil(this.destroy$)
-    ).subscribe({
+      .pipe(
+        takeUntil(this.destroy$)
+      ).subscribe({
         next: (response) => {
           response && (this.weatherData = response)
         },
         error: (error) => {
-          console.log(error)
+          if (error.error.cod == 404) {
+            alert(error.error.message);
+          }
+          this.spinner.hide();
+        },
+        complete: () => {
+          this.spinner.hide();
+          this.initialCityName = '';
         }
       });
   }
 
   onSubmit(): void {
     this.getWeatherDatas(this.initialCityName);
-    this.initialCityName = '';
   }
 
   ngOnDestroy(): void {

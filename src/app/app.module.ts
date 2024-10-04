@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WeatherHomeComponent } from './modules/weather/page/wheater-home/weather-home.component';
 import { WeatherCardComponent } from './modules/weather/components/weather-card/weather-card.component';
+import { WeatherHomeComponent } from './modules/weather/page/wheater-home/weather-home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WeatherCardComponent } from './modules/weather/components/weather-card/
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
