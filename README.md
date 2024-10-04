@@ -1,27 +1,46 @@
-# Teste
+# Weather App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+O Weather App é um aplicativo web desenvolvido em Angular 15.2.11 que permite aos usuários consultar as condições meteorológicas atuais de diversas localidades. Com uma interface intuitiva e responsiva, o app utiliza APIs de dados meteorológicos para fornecer informações precisas e atualizadas, como temperatura, umidade, velocidade do vento e condições climáticas.
 
-## Development server
+## Tecnologias Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 15.2.11
+- ngx-spinner 15.0.1
+- SCSS
+- API openweathermap
 
-## Code scaffolding
+## Instalação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Clone o repositório**
 
-## Build
+```bash
+   git clone https://github.com/Flavio1028/weather-app.git
+   cd weather-app
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Instale as dependências
 
-## Running unit tests
+```bash
+   npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Adicione a chave da API no arquivo de environments para utilizar o serviço OpenWeatherMap
 
-## Running end-to-end tests
+```
+export const environment = {
+  weatherToken: '<API_KEY>'
+};
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Inicie o servidor de desenvolvimento
 
-## Further help
+```bash
+npm start
+```
+5. Acesse o aplicativo
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Abra o seu navegador e vá para http://localhost:4200.
+
+## Licença
+
+Este projeto está licenciado sob a MIT License. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
