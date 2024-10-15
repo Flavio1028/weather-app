@@ -20,6 +20,9 @@ jobs:
         node-version: 18.20.4
     - name: Install dependencies
       run: npm install
+    - name: Set API Key
+      run: |
+        echo "export const environment = { weatherToken: '${{ secrets.API_KEY }}' };" > src/environments/environment.ts
     - name: Build
       run: npm run build
     - uses: w9jds/firebase-action@master
@@ -27,4 +30,3 @@ jobs:
         args: deploy
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        API_KEY: ${{ secrets.API_KEY }}
