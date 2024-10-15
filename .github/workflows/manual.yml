@@ -23,6 +23,8 @@ jobs:
     - name: Set API Key
       run: |
         echo "export const environment = { weatherToken: '${{ secrets.API_KEY }}' };" > src/environments/environment.ts
+    - name: Debug Environment File
+      run: cat src/environments/environment.ts
     - name: Build
       run: npm run build
     - uses: w9jds/firebase-action@master
