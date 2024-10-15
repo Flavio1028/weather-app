@@ -1,8 +1,8 @@
 name: Deploy-To-Firebase
 
-on: 
+on:
   push:
-    branches: 
+    branches:
       - main
 
   workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
     - name: Use Node.js 18.20.4
       uses: actions/setup-node@v1
       with:
-        node-version: 18.20.4    
+        node-version: 18.20.4
     - name: Install dependencies
       run: npm install
     - name: Build
@@ -27,3 +27,4 @@ jobs:
         args: deploy
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        API_KEY: ${{ secrets.API_KEY }}
