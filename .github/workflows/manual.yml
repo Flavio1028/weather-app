@@ -23,6 +23,7 @@ jobs:
     - name: Set API Key
       run: |
         echo "export const environment = { weatherToken: '${{ secrets.API_KEY }}' };" > src/environments/environment.ts
+    - name: Set PROD API Key
       run: |
         echo "export const environment = { weatherToken: '${{ secrets.API_KEY }}' };" > src/environments/environment.prod.ts
     - name: Build
