@@ -1,3 +1,3 @@
 export const environment = {
-  weatherToken: 'API_KEY'
+  weatherToken: '${process.env.API_KEY}'
 };
